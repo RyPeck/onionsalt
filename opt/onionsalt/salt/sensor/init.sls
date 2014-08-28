@@ -98,16 +98,20 @@ restart-ossec:
       - file: /var/ossec/rules
       
 # Get rid of the old cron job that updates rules because we don't need it any more
-
 /etc/cron.d/rule-update:
    file.absent
 
-# Put our new cron job up in there
-
+# Cron using salt
 cron-update-salt-checkin:
-    file.managed:
-       - name: /etc/cron.d/salt-update
-       - source: salt://sensor/cron/salt-update
+  cron.present:
+    - name: /usr/bin/salt-call state.highstate >/dev/null 2>&1
+    - user: root
+    - minute: '*/15'
+
+# Remove the old cron job
+cron-update-salt-checkin-old:
+  file.absent:
+    - name: /etc/cron.d/salt-update
 
 
 # Enable the Bro Intel Framework
