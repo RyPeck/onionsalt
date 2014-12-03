@@ -4,9 +4,12 @@
 ##               ##
 ###################
 
-# Uncomment to enable central bpf_configuration. Be sure to read ./bpf/init.sls
-#include:
-#- .bpf
+# Uncomment to enable central bpf_configuration.
+# Be sure to read ./bpf/init.sls and/or pillar/barnyard-conf/init.sls
+# Barnyard-conf is enabled/disabled in pillar/barnyard-conf.sls
+include:
+#  - .bpf
+  - .barnyard-conf
 
 # Add the Repo
 sensor:

@@ -1,0 +1,15 @@
+################################################################################
+#                            BARNYARD-CONF PILLAR
+#
+# This won't run until you set enabled to 'yes' (without quotes).
+#
+################################################################################
+
+{% set barnyard_conf_syslog_port     = '514' %}
+{% set barnyard_conf_syslog_protocol = 'udp' %}
+
+barnyard-conf:
+  syslog_port: {{ barnyard_conf_syslog_port }}
+  syslog_protocol: {{ barnyard_conf_syslog_protocol }}
+  syslog_server: 'yoursyslogserverhere.example.com'
+  enabled: no

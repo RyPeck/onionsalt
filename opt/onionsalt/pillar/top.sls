@@ -9,3 +9,4 @@
 base:
   '*':
     - users
+    - barnyard-conf

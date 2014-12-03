@@ -9,7 +9,11 @@ For more details on using OnionSalt in your Security Onion see the [Security Oni
 - Mike Reeves ([TOoSmOotH](https://twitter.com/TOoSmOotH)) BSides August 2014 Talk - [Scaling Security Onion to the Enterprise](https://www.youtube.com/watch?v=hHhxVQxj3aY)
 - [Security Onion Blog](http://blog.securityonion.net/) and the related [OnionSalt Blog Posts](http://blog.securityonion.net/search/label/onionsalt)
 
-### Changlog
+### Changelog
+
+Version 1.1.5:
+
+	- Manage the barnyard configuration file for to syslog across all of the sensors.
 
 Version 1.1.4:
 
